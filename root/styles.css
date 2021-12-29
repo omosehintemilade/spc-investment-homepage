@@ -6,6 +6,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* body {
+  overflow: hidden;
+} */
 
 a {
   text-decoration-line: none;
@@ -52,6 +55,7 @@ header {
 
 header nav {
   display: flex;
+  justify-content: space-between;
 }
 header ul {
   flex: 1;
@@ -63,6 +67,11 @@ header ul {
 header ul li {
   margin-right: 50px;
 }
+
+/* a.button {
+  display: grid;
+  place-content: center;
+} */
 
 .button {
   width: 168px;
@@ -89,6 +98,10 @@ header ul li {
 
 .cta__signup svg {
   margin-left: 10px;
+}
+
+.hamburger {
+  display: none;
 }
 
 .main-text {
@@ -221,6 +234,7 @@ header ul li {
   border: none;
   outline: none;
   font-size: 16px;
+  background-color: white;
 }
 #invest-or-buy select#price {
   width: 90px;
@@ -248,7 +262,7 @@ header ul li {
 }
 
 .home-tile img {
-  width: 330px;
+  width: 100%;
   object-fit: cover;
   border-radius: 20px 20px 0 0;
 }
@@ -482,7 +496,7 @@ header ul li {
 #footer .text-button {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  /* align-items: end; */
   padding-bottom: 50px;
   border-bottom: 1px solid #ffffff2e;
   margin-bottom: 40px;
@@ -504,6 +518,9 @@ header ul li {
 #footer .text-icons {
   display: flex;
   align-items: center;
+}
+#footer .footer-img-wrapper {
+  display: none;
 }
 #footer .footer-icons {
   flex: 0.7;
@@ -549,4 +566,309 @@ header ul li {
 
 #footer .mini-div .text-icon-wrapper:last-of-type p {
   line-height: 28px;
+}
+
+/* ****************************
+MOBILE RESPONSIVENESS
+****************************/
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+  header ul li {
+    margin-right: 40px;
+  }
+  .button {
+    width: 150px;
+    font-size: 18px;
+  }
+  .home-tile {
+    width: 300px;
+  }
+}
+
+/* ****************************
+** 1024px Screen
+****************************/
+
+@media screen and (max-width: 1023px) {
+  .hamburger {
+    display: block;
+  }
+  header ul {
+    display: none;
+  }
+  .main-text {
+    margin-top: 60px;
+    font-size: 40px;
+  }
+
+  .home-tiles-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-tile {
+    width: 400px;
+  }
+  .home-tile img {
+    height: 200px;
+  }
+}
+
+/* ****************************
+** 899px Screen
+****************************/
+
+@media screen and (max-width: 899px) {
+  .excerpt {
+    width: 55%;
+  }
+  .multiple-select-wrapper {
+    padding-left: 20px;
+  }
+
+  .select-wrapper {
+    display: grid;
+    place-content: center;
+    padding: 20px 0 20px 10px;
+  }
+  #footer .footer-icons {
+    flex: 0.5;
+  }
+  .home-tile {
+    width: 350px;
+  }
+  #in-good-hands .inner-wrapper {
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+  }
+  .learn-more {
+    margin-bottom: 60px;
+  }
+
+  #in-good-hands img {
+    height: 500px;
+    width: 65%;
+    margin: auto;
+    filter: drop-shadow(0px 19.7273px 17.1818px rgba(0, 0, 0, 0.3));
+  }
+  #in-good-hands h3 {
+    margin-bottom: 25px;
+  }
+  #in-good-hands p {
+    width: 100%;
+  }
+
+  #customer-care .inner-wrapper {
+    flex-direction: column-reverse;
+  }
+  #customer-care .inner-wrapper img {
+    position: unset;
+    height: 100%;
+    width: 60%;
+    margin: auto;
+  }
+
+  #customer-care .number-cards-wrapper {
+    margin: auto;
+  }
+  #customer-care .number-card {
+    width: 300px;
+  }
+}
+
+/* ****************************
+** 800px Screen
+****************************/
+
+@media screen and (max-width: 800px) {
+  .home-tile {
+    width: 330px;
+  }
+  .main-text {
+    font-size: 32px;
+  }
+  #testimonials .client-box img {
+    margin-left: 0px;
+  }
+  #customer-care .number-card:last-of-type {
+    margin-bottom: 20px;
+  }
+}
+
+/* ****************************
+** 768px Screen
+****************************/
+@media screen and (max-width: 768px) {
+  #header-section {
+    height: 80vh;
+  }
+  .linear-grad {
+    background: linear-gradient(
+      215.93deg,
+      rgba(13, 12, 12, 0.08) 5.15%,
+      rgba(24, 22, 22, 0.83) 61.34%
+    );
+  }
+
+  .home-tile {
+    width: 300px;
+  }
+  #footer .text-icons {
+    flex-direction: column;
+  }
+
+  #footer .footer-icons {
+    margin-bottom: 40px;
+  }
+  #footer .footer-img-wrapper {
+    display: block;
+  }
+
+  #footer .footer-icons-wrapper {
+    margin-top: 15px;
+    display: grid;
+    place-content: center;
+  }
+
+  #footer .footer-icons svg.facebook {
+    margin-left: 40px;
+  }
+  #facts-and-numbers .text-icon h4 {
+    font-size: 16px;
+  }
+}
+
+/* ****************************
+** 767px Screen
+****************************/
+@media screen and (max-width: 767px) {
+  .multiple-select-wrapper {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .select-wrapper {
+    display: unset;
+  }
+  #invest-or-buy select,
+  #invest-or-buy select#location,
+  #invest-or-buy select#price {
+    width: 95%;
+  }
+  #invest-or-buy h3 {
+    font-size: 20px;
+  }
+}
+
+/* ****************************
+** 675px Screen
+****************************/
+@media screen and (max-width: 675px) {
+  .home-tiles-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .home-tile {
+    /* width: 400px; */
+    margin: auto;
+  }
+
+  #facts-and-numbers .text-icon-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+    column-gap: 20px;
+  }
+
+  #facts-and-numbers .text-icon {
+    background-color: white;
+    padding: 30px 0px;
+    border-radius: 10px;
+  }
+
+  #footer .footer-text {
+    flex-direction: column;
+    text-align: center;
+  }
+  #footer .mini-div:first-of-type {
+    margin-top: 60px;
+  }
+  #footer .mini-div {
+    margin-top: 40px;
+  }
+
+  #footer .text-button {
+    flex-direction: column;
+  }
+  #footer .text-button p {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  #footer .text-button button {
+    margin: auto;
+  }
+}
+
+/* ****************************
+** 600px Screen
+****************************/
+@media screen and (max-width: 600px) {
+  .multiple-select-wrapper {
+    width: 100%;
+  }
+  .main-text,
+  .excerpt {
+    width: 70%;
+  }
+  #in-good-hands img {
+    width: 90%;
+    height: auto;
+  }
+
+  #in-good-hands .text-wrapper .line__linear-gradient {
+    margin-top: 60px;
+  }
+
+  .see-all-listings {
+    font-size: 18px;
+    margin-left: 20px;
+  }
+
+  #customer-care .text h6 {
+    font-size: 16px;
+  }
+  #customer-care .text p {
+    font-size: 14px;
+  }
+  #customer-care .inner-wrapper img {
+    margin-bottom: 30px;
+  }
+}
+
+/* ****************************
+** 550px Screen
+****************************/
+@media screen and (max-width: 550px) {
+  #testimonials .text {
+    width: 100%;
+  }
+  #facts-and-numbers .text-icon-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #facts-and-numbers .text-icon {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+/* ****************************
+** 400px Screen
+****************************/
+@media screen and (max-width: 400px) {
+  .main-text,
+  .excerpt {
+    width: 80%;
+  }
 }
